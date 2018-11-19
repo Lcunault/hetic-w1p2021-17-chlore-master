@@ -1,0 +1,27 @@
+.bio {
+  transition: opacity 0.3s ease-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.bio.is-open {
+  opacity: 1;
+  height: auto;
+}
+
+.arrowb {
+  transition: transform 0.3s;
+}
+
+.arrowb.is-open {
+  transform: rotate(180deg);
+}
+
+.illustration {
+  transition: transform 0.3s;
+}
+
+.illustration:hover {
+  transform: scale(1.1);
+}

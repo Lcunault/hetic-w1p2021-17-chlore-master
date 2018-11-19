@@ -1,0 +1,337 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Trade Gothic";
+  src: url("../fonts/TradeGothic.woff") format("woff"),
+    url("../fonts/TradeGothic.woff2") format("woff2");
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(1.5deg);
+  }
+  100% {
+    transform: rotate(-1.5deg);
+  }
+}
+
+body {
+  font-family: "Trade Gothic", "Helvetica", "sans-serif";
+  letter-spacing: 0.5px;
+  line-height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}
+
+header,
+header img {
+  height: 40px;
+}
+
+header {
+  width: 100%;
+  background: black;
+}
+
+header img {
+  z-index: inherit;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.slider {
+  position: relative;
+  max-width: 600px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.slide {
+  width: 100vw;
+  max-width: 600px;
+}
+
+.button-left,
+.button-right {
+  position: absolute;
+  top: 50%;
+  background-color: #f5f5f500;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border: none;
+  color: white;
+  text-shadow: 1px 1px 1px grey;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 1px;
+  cursor: pointer;
+}
+
+.button-left {
+  left: 0;
+  padding-right: 13px;
+}
+
+.button-right {
+  right: 0;
+  padding-left: 13px;
+}
+
+.arrow-left {
+  display: none;
+}
+
+.title,
+.description,
+.price,
+.info,
+.info-plus,
+.suggestion,
+.suggestion-img {
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 22px;
+}
+
+.title {
+  font-family: "Oswald", sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.description {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+}
+
+.info-plus {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.suggestion {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.sugg-img-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.suggestion-img {
+  height: 20vw;
+  transition: opacity 0.2s;
+  margin: 0;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background: black;
+  color: white;
+  font-size: 10px;
+  padding-left: 10px;
+  margin-top: -6px;
+  width: 100%;
+}
+
+footer ol {
+  display: flex;
+  flex-direction: row;
+  width: 43vw;
+  justify-content: space-around;
+}
+
+.icon {
+  width: 15px;
+  display: flex;
+  align-items: right;
+}
+
+.iconcontainer {
+  position: absolute;
+  width: 40%;
+  height: 50px;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.social {
+  display: flex;
+  flex-direction: center;
+}
+
+@media screen and (min-width: 1150px) {
+  body {
+    text-align: left;
+  }
+
+  a:hover,
+  .slider:hover {
+    cursor: url(../images/icones/teddy.cur), pointer;
+  }
+
+  header,
+  .logo {
+    height: 90px;
+  }
+
+  .wrap {
+    width: 1100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .button-left,
+  .button-right {
+    display: none;
+  }
+
+  .title {
+    font-weight: bolder;
+    font-size: 27px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  section:nth-of-type(1) {
+    max-width: 500px;
+  }
+
+  .slider {
+    margin: 0;
+    width: 477px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slide {
+    height: 600px;
+    width: auto;
+  }
+
+  .arrow-left {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    transform: rotate(-90deg);
+    height: 40px;
+    left: 20px;
+  }
+
+  .slide.one {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .slide.two,
+  .slide.three,
+  .slide.four {
+    position: absolute;
+    height: 300px;
+    padding: 30px;
+  }
+
+  .slide.two,
+  .slide.three {
+    top: 0;
+  }
+
+  .slide.two {
+    left: 0;
+  }
+
+  .slide.three {
+    right: 0;
+  }
+
+  .slide.four {
+    bottom: 0;
+  }
+
+  .suggestion {
+    font-size: 22px;
+  }
+
+  .suggestion-img {
+    margin-right: 40px;
+    margin-left: 40px;
+    padding: 0;
+  }
+
+  .swing {
+    animation: swing ease-in-out 1s infinite alternate;
+    transform-origin: center -20px;
+    float: left;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  .swing img {
+    height: 230px;
+    display: block;
+  }
+
+  .swing::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #999;
+    top: -5px;
+    left: 50%;
+    z-index: -1;
+    border-bottom: none;
+    border-right: none;
+    transform: rotate(45deg);
+  }
+
+  .swing:before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: -10px;
+    left: 52.5%;
+    z-index: 5;
+    border-radius: 50% 50%;
+    background: #000;
+  }
+
+  .swing:after,
+  .suggestion-img,
+  .swing:before {
+    margin-top: 50px;
+  }
+}
